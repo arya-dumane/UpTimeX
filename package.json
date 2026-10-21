@@ -1,0 +1,21 @@
+{
+  "name": "uptimex-monorepo",
+  "version": "1.0.0",
+  "description": "UptimeX - Production-grade website uptime monitoring SaaS platform",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently -n \"backend,frontend\" -c \"blue,green\" \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "npm --prefix backend run dev",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "start:backend": "npm --prefix backend start",
+    "build:frontend": "npm --prefix frontend run build",
+    "install:backend": "npm --prefix backend install",
+    "install:frontend": "npm --prefix frontend install",
+    "install:all": "npm run install:backend && npm run install:frontend",
+    "test": "npm --prefix backend test",
+    "db:verify": "npm --prefix backend run db:verify"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
